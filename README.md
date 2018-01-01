@@ -41,9 +41,11 @@ add VirtualBox
 -------------------------------------------------------------------------------------------------
 ERROR -> cd android/ && ./gradlew clean
 -------------------------------------------------------------------------------------------------
-APK -> react-native bundle --dev false --platform android --entry-file index.android.js --bundle-output ./android/app/build/intermediates/assets/debug/index.android.bundle --assets-dest ./android/app/build/intermediates/res/merged/debug
+APK -> 0.(in project directory) mkdir android/app/src/main/assets
 -------------------------------------------------------------------------------------------------
-APK -> cd android -> ./gradlew assembleDebug
+APK -> 1. react-native bundle --platform android --dev false --entry-file index.js --bundle-output android/app/src/main/assets/index.android.bundle --assets-dest android/app/src/main/res
+-------------------------------------------------------------------------------------------------
+APK -> 2. cd android -> ./gradlew assembleDebug
 -------------------------------------------------------------------------------------------------
 RELEASE -> cd android -> assembleRelease -> \android\app\build\outputs\apk
 -------------------------------------------------------------------------------------------------

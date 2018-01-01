@@ -11,7 +11,7 @@ import {
     BackAndroid
 } from 'react-native';
 
-class PhoneDetails extends Component {
+class CarDetails extends Component {
     constructor(props) {
         super(props);
 
@@ -29,12 +29,19 @@ class PhoneDetails extends Component {
         if (props.data) {
             this.state = {
                 id: props.data.id,
+                model: props.data.model,
+                regnum: props.data.regnum,
+                year: props.data.year,
                 name: props.data.name,
+                name1: props.data.name1,
+                name2: props.data.name2,
                 phone: props.data.phone,
-                street: props.data.street,
+                str: props.data.str,
                 house: props.data.house,
                 apt: props.data.apt,
-                index: props.data.index
+                bdate: props.data.bdate,
+                job: props.data.job,
+                pos: props.data.pos
             };
         }
     }
@@ -63,7 +70,7 @@ class PhoneDetails extends Component {
                         <TouchableWithoutFeedback>
                             <View>
                                 <Text style={styles.textLarge}>
-                                    {this.state.name}
+                                    {this.state.regnum}
                                 </Text>
                             </View>
                         </TouchableWithoutFeedback>
@@ -82,11 +89,77 @@ class PhoneDetails extends Component {
                     <View style={styles.form}>
                         <View style={styles.itemBlock}>
                             <Text style={styles.itemTextBold}>
+                                Model:
+                            </Text>
+                            <View style={styles.itemWrap}>
+                                <Text style={styles.itemText}>
+                                    {this.state.model}
+                                </Text>
+                            </View>
+                        </View>                           
+						
+						<View style={styles.itemBlock}>
+                            <Text style={styles.itemTextBold}>
+                                Regnum:
+                            </Text>
+                            <View style={styles.itemWrap}>
+                                <Text style={styles.itemText}>
+                                    {this.state.regnum}
+                                </Text>
+                            </View>
+                        </View>  		
+						
+						<View style={styles.itemBlock}>
+                            <Text style={styles.itemTextBold}>
+                                Year:
+                            </Text>
+                            <View style={styles.itemWrap}>
+                                <Text style={styles.itemText}>
+                                    {this.state.year}
+                                </Text>
+                            </View>
+                        </View>                        
+						
+						<View style={styles.itemBlock}>
+                            <Text style={styles.itemTextBold}>
                                 Name:
                             </Text>
                             <View style={styles.itemWrap}>
                                 <Text style={styles.itemText}>
-                                    {this.state.name}
+                                    {this.state.name} {this.state.name1} {this.state.name2}
+                                </Text>
+                            </View>
+                        </View>
+					
+                        <View style={styles.itemBlock}>
+                            <Text style={styles.itemTextBold}>
+                                Birthday:
+                            </Text>
+                            <View style={styles.itemWrap}>
+                                <Text style={styles.itemText}>
+                                    {this.state.bdate}
+                                </Text>
+                            </View>
+                        </View>			
+						
+                        <View style={styles.itemBlock}>
+                            <Text style={styles.itemTextBold}>
+                                Job:
+                            </Text>
+                            <View style={styles.itemWrap}>
+                                <Text style={styles.itemText}>
+                                    {this.state.job}
+                                </Text>
+                            </View>
+                        </View>			
+						
+                        <View style={styles.itemBlock}>
+                            <Text style={styles.itemTextBold}>
+                                Position:
+                            </Text>
+                            <View style={styles.itemWrap}>
+                                <Text style={styles.itemText}>
+                                    {this.state.pos}
                                 </Text>
                             </View>
                         </View>
@@ -101,14 +174,14 @@ class PhoneDetails extends Component {
                                 </Text>
                             </View>
                         </View>
-
+						
                         <View style={styles.itemBlock}>
                             <Text style={styles.itemTextBold}>
                                 Street:
                             </Text>
                             <View style={styles.itemWrap}>
                                 <Text style={styles.itemText}>
-                                    {this.state.street}
+                                    {this.state.str}
                                 </Text>
                             </View>
                         </View>
@@ -131,28 +204,6 @@ class PhoneDetails extends Component {
                             <View style={styles.itemWrap}>
                                 <Text style={styles.itemText}>
                                     {this.state.apt}
-                                </Text>
-                            </View>
-                        </View>
-
-                        <View style={styles.itemBlock}>
-                            <Text style={styles.itemTextBold}>
-                                Zip:
-                            </Text>
-                            <View style={styles.itemWrap}>
-                                <Text style={styles.itemText}>
-                                    {this.state.index}
-                                </Text>
-                            </View>
-                        </View>
-
-                        <View style={styles.itemBlock}>
-                            <Text style={styles.itemTextBold}>
-                                ID:
-                            </Text>
-                            <View style={styles.itemWrap}>
-                                <Text style={styles.itemText}>
-                                    {this.state.id}
                                 </Text>
                             </View>
                         </View>
@@ -260,4 +311,4 @@ const styles = StyleSheet.create({
     }
 });
 
-export default PhoneDetails;
+export default CarDetails;

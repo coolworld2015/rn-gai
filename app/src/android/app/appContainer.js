@@ -11,8 +11,8 @@ import Users from '../users/users';
 import UserDetails from '../users/userDetails';
 import UserAdd from '../users/userAdd';
 
-import Phones from '../phones/phones';
-import PhoneDetails from '../phones/phoneDetails';
+import Cars from '../cars/cars';
+import CarDetails from '../cars/carDetails';
 
 import Search from '../search/search';
 import SearchResults from '../search/searchResults';
@@ -35,7 +35,7 @@ class AppContainer extends Component {
  					underlineStyle={{backgroundColor: 'darkblue'}}
 					backgroundColor='white'/>}
             >
-                <PhonesTab tabLabel="Phones"/>
+                <CarsTab tabLabel="Cars"/>
                 <UsersTab tabLabel="Users"/>
                 <AuditTab tabLabel="Audit"/>
                 <Logout tabLabel="Logout"/>
@@ -62,7 +62,7 @@ class SearchTab extends Component {
         this.routes = [
             {title: 'Search', index: 0},
             {title: 'Search Results', index: 1},
-            {title: 'Phones Details', index: 2}
+            {title: 'Cars Details', index: 2}
         ];
     }
 
@@ -75,7 +75,7 @@ class SearchTab extends Component {
                 return <SearchResults data={route.data} routes={this.routes} navigator={navigator}/>;
                 break;
             case 2:
-                return <PhoneDetails data={route.data} routes={this.routes} navigator={navigator}/>;
+                return <CarsDetails data={route.data} routes={this.routes} navigator={navigator}/>;
                 break;
         }
     }
@@ -93,22 +93,22 @@ class SearchTab extends Component {
     }
 }
 
-class PhonesTab extends Component {
+class CarsTab extends Component {
     constructor(props) {
         super(props);
         this.routes = [
-            {title: 'Phones', index: 0},
-            {title: 'Phones Details', index: 1}
+            {title: 'Cars', index: 0},
+            {title: 'Cars Details', index: 1}
         ];
     }
 
     renderScene(route, navigator) {
         switch (route.index) {
             case 0:
-                return <Phones routes={this.routes} navigator={navigator}/>;
+                return <Cars routes={this.routes} navigator={navigator}/>;
                 break;
             case 1:
-                return <PhoneDetails data={route.data} routes={this.routes} navigator={navigator}/>;
+                return <CarDetails data={route.data} routes={this.routes} navigator={navigator}/>;
                 break;
             case 2:
                 return <Search data={route.data} routes={this.routes} navigator={navigator}/>;

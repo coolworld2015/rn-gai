@@ -16,7 +16,7 @@ import {
 	RefreshControl
 } from 'react-native';
 
-class Phones extends Component {
+class Cars extends Component {
     constructor(props) {
         super(props);
 
@@ -115,10 +115,10 @@ class Phones extends Component {
             >
                 <View style={styles.row}>
                     <Text style={styles.rowText}>
-                        {rowData.name} - {rowData.phone}
+                        {rowData.regnum} ({rowData.model}) - {rowData.name} {rowData.name1} {rowData.name2}
                     </Text>
                 </View>
-            </TouchableHighlight>
+            </TouchableHighlight> 
         );
     }
 
@@ -229,7 +229,7 @@ class Phones extends Component {
                         <TouchableWithoutFeedback>
                             <View>
                                 <Text style={styles.textLarge}>
-                                    Phones
+                                    Cars
                                 </Text>
                             </View>
                         </TouchableWithoutFeedback>
@@ -394,4 +394,4 @@ const styles = StyleSheet.create({
     }
 });
 
-export default Phones;
+export default Cars;
