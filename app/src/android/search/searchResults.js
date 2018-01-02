@@ -131,7 +131,7 @@ class SearchResults extends Component {
             >
                 <View style={styles.row}>
                     <Text style={styles.rowText}>
-                        {rowData.name} - {rowData.phone}
+                        {rowData.regnum} ({rowData.model}) - {rowData.name} {rowData.name1} {rowData.name2}
                     </Text>
                 </View>
             </TouchableHighlight>
@@ -181,7 +181,7 @@ class SearchResults extends Component {
         }
 
         let arr = [].concat(this.state.responseData);
-        let items = arr.filter((el) => el.phone.toLowerCase().indexOf(text.toLowerCase()) !== -1);
+        let items = arr.filter((el) => el.name.toLowerCase().indexOf(text.toLowerCase()) !== -1);
         this.setState({
             dataSource: this.state.dataSource.cloneWithRows(items),
             resultsCount: items.length,
