@@ -52,18 +52,15 @@ class CarDetails extends Component {
 
     render() {
 		let phone, job, pos;
-
-		if (this.state.phone == '') {
-            phone = 'N/A';
-        }
 		
-		if (this.state.job == '') {
-            job = 'N/A';
-        }
+		phone = this.state.phone;
+		if (phone == '') { phone = 'N/A'; }
 		
-		if (this.state.pos == '') {
-            pos = 'N/A';
-        }
+		job = this.state.job;
+		if (job == '') { job = 'N/A'; }
+		
+		pos = this.state.pos;
+		if (pos == '') { pos = 'N/A'; }
 		
         return (
             <View style={styles.container}>
