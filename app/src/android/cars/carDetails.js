@@ -51,6 +51,20 @@ class CarDetails extends Component {
     }
 
     render() {
+		let phone, job, pos;
+
+		if (this.state.phone == '') {
+            phone = 'N/A';
+        }
+		
+		if (this.state.job == '') {
+            job = 'N/A';
+        }
+		
+		if (this.state.pos == '') {
+            pos = 'N/A';
+        }
+		
         return (
             <View style={styles.container}>
                 <View style={styles.header}>
@@ -148,7 +162,7 @@ class CarDetails extends Component {
                             </Text>
                             <View style={styles.itemWrap}>
                                 <Text style={styles.itemText}>
-                                    {this.state.job}
+                                    {job}
                                 </Text>
                             </View>
                         </View>			
@@ -159,7 +173,7 @@ class CarDetails extends Component {
                             </Text>
                             <View style={styles.itemWrap}>
                                 <Text style={styles.itemText}>
-                                    {this.state.pos}
+                                    {pos}
                                 </Text>
                             </View>
                         </View>
@@ -170,7 +184,7 @@ class CarDetails extends Component {
                             </Text>
                             <View style={styles.itemWrap}>
                                 <Text style={styles.itemText}>
-                                    {this.state.phone}
+                                    {phone}
                                 </Text>
                             </View>
                         </View>
